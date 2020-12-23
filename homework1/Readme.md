@@ -1,5 +1,3 @@
-# hadoop-sample
-
 # Task summary
 
 ### Business logic

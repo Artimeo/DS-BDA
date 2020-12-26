@@ -61,7 +61,7 @@ public class DataWritable implements Writable {
     // toString() override is for formatted output line in .csv from self
     @Override
     public String toString(){
-        return bytes.toString() + "," + requests.toString() + "," + averageBytes.toString();
+        return bytes.toString() + ","a + requests.toString() + "," + averageBytes.toString();
     }
 
     // writes into self captured data from reducer

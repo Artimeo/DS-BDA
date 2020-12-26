@@ -1,17 +1,5 @@
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.MapFunction;
 import org.apache.spark.sql.*;
-import scala.Tuple3;
-import scala.collection.mutable.MutableList;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static org.apache.commons.lang.StringUtils.split;
-import static org.apache.commons.lang3.StringUtils.SPACE;
 
 public class SparkApp {
     public static void main(String[] args) {

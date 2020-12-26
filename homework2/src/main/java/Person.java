@@ -1,12 +1,17 @@
 import java.io.Serializable;
 
+/** Person - defines person for data from a .csv input file line
+ * fromString - creates class object from String line
+ * getters must be defined
+ */
+
 public class Person implements Serializable {
     public int passportNumber;
     public int month;
     public int salary;
     public int age;
     public int trips;
-    private String category;
+    private final String category;
 
     public Person(int passportNumber, int month, int salary, int age, int trips) {
         if (age <= 0) {
@@ -17,7 +22,7 @@ public class Person implements Serializable {
         this.salary = salary;
         this.age = age;
         this.trips = trips;
-        this.category = categotyForAge(age);
+        this.category = categoryForAge(age);
     };
 
     public static Person fromString(String line) {
@@ -44,7 +49,7 @@ public class Person implements Serializable {
                 ", trips " + trips;
     }
 
-    private String categotyForAge(int age) {
+    private String categoryForAge(int age) {
         if (0 < age && age < 18) {
             return "teenage";
         } else if (18 <= age && age < 27) {
@@ -53,62 +58,23 @@ public class Person implements Serializable {
             return "average";
         } else if (45 <= age && age < 60) {
             return "mature";
-        } else if (60 < age) {
+        } else if (age >= 60) {
             return "old";
         }
         return "unknown";
     }
 
-    public double averageSalary() {
-        return this.salary;
-    }
+    // getters - must be provided for correct DataFrame schema creating
 
-    public double averageTrips() {
-        return this.trips;
-    }
+    public int getAge() { return age; }
 
-    // setters
-    public void setAge(int age) {
-        this.age = age;
-    }
+    public int getMonth() { return month; }
 
-    public void setMonth(int month) {
-        this.month = month;
-    }
+    public int getPassportNumber() { return passportNumber; }
 
-    public void setPassportNumber(int passportNumber) {
-        this.passportNumber = passportNumber;
-    }
+    public int getSalary() { return salary; }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public void setTrips(int trips) {
-        this.trips = trips;
-    }
-
-    // getters
-
-    public int getAge() {
-        return age;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public int getPassportNumber() {
-        return passportNumber;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public int getTrips() {
-        return trips;
-    }
+    public int getTrips() { return trips; }
 
     public String getCategory() { return category; }
 }

@@ -48,6 +48,6 @@ hs_err_pid*
 target/
 target/**
 .DS_Store
-.iml
+*.iml
 output/
 output/**

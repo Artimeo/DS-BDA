@@ -1,5 +1,3 @@
-# hadoop-sample
-
 # Task summary
 
 ### Business logic
@@ -14,6 +12,7 @@ For logs like:
 ### Output Format
 
 CSV file.
+format is: IP,bytes from ip,requests count, average bytes
 
 ### Additional Requirements
 
